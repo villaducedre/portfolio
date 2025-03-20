@@ -1,9 +1,9 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>House for Sale</title>
+    <title>Maison à Vendre</title>
     <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
     <style>
@@ -51,9 +51,11 @@
         }
         #pictures img {
             width: 80%;
-            max-width: 600px;
+            max-width: 300px;
+            margin: 10px;
             border-radius: 10px;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            cursor: pointer;
         }
         .info {
             background: #fff;
@@ -69,44 +71,133 @@
             box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.1);
             font-size: 0.9rem;
         }
+        /* Lightbox style */
+        .lightbox {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            justify-content: center;
+            align-items: center;
+        }
+        .lightbox img {
+            max-width: 80%;
+            max-height: 80%;
+            border-radius: 10px;
+        }
+        .lightbox .close {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            font-size: 2rem;
+            color: #fff;
+            cursor: pointer;
+        }
+        .carousel {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 20px;
+        }
+        .carousel button {
+            background-color: #007BFF;
+            color: white;
+            font-size: 1.5rem;
+            border: none;
+            padding: 10px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
     <header>
-        <h1>House for Sale</h1>
+        <h1>Maison à Vendre</h1>
     </header>
     
     <nav>
-        <a href="#pictures">Pictures</a>
-        <a href="#info">Info</a>
+        <a href="#pictures">Photos</a>
+        <a href="#info">Informations</a>
         <a href="#contact">Contact</a>
     </nav>
     
     <section id="pictures">
-        <h2>House Pictures</h2>
-        <img src="house-photo.jpg" alt="House Photo">
+        <h2>Photos de la Maison</h2>
+        <div id="gallery" class="carousel">
+            <img src="images/house-photo1.jpg" alt="Photo 1" onclick="openLightbox(this)">
+            <img src="images/house-photo2.jpg" alt="Photo 2" onclick="openLightbox(this)">
+            <img src="images/house-photo3.jpg" alt="Photo 3" onclick="openLightbox(this)">
+        </div>
     </section>
     
     <section id="info">
-        <h2>House Information</h2>
+        <h2>Informations sur la Maison</h2>
         <div class="info">
-            <p><strong>Location:</strong> Your Address</p>
-            <p><strong>Price:</strong> $XXX,XXX</p>
-            <p><strong>Size:</strong> XXX sq ft</p>
-            <p><strong>Bedrooms:</strong> X</p>
-            <p><strong>Bathrooms:</strong> X</p>
-            <p><strong>Additional Details:</strong> Description of the house...</p>
+            <p><strong>Emplacement:</strong> Votre Adresse</p>
+            <p><strong>Surface:</strong> XXX m²</p>
+            <p><strong>Chambres:</strong> X</p>
+            <p><strong>Salles de bain:</strong> X</p>
+            <p><strong>Détails supplémentaires:</strong> Description de la maison...</p>
         </div>
     </section>
     
     <section id="contact">
         <h2>Contact</h2>
         <p>Email: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
-        <p>Phone: <a href="tel:+123456789">+123 456 789</a></p>
+        <p>Téléphone: <a href="tel:+123456789">+123 456 789</a></p>
     </section>
     
     <footer>
-        <p>&copy; 2024 House for Sale</p>
+        <p>&copy; 2024 Maison à Vendre</p>
     </footer>
+
+    <!-- Lightbox Modal -->
+    <div id="lightbox" class="lightbox">
+        <span class="close" onclick="closeLightbox()">&times;</span>
+        <img id="lightbox-img" src="" alt="Lightbox Image">
+    </div>
+
+    <script>
+        // Open the lightbox
+        function openLightbox(img) {
+            const lightbox = document.getElementById('lightbox');
+            const lightboxImg = document.getElementById('lightbox-img');
+            lightbox.style.display = 'flex';
+            lightboxImg.src = img.src;
+        }
+
+        // Close the lightbox
+        function closeLightbox() {
+            const lightbox = document.getElementById('lightbox');
+            lightbox.style.display = 'none';
+        }
+
+        // Optional: Carousel Navigation (for next/prev images)
+        let currentIndex = 0;
+        const images = document.querySelectorAll('#gallery img');
+
+        // Function to move to next image
+        function showNextImage() {
+            currentIndex = (currentIndex + 1) % images.length;
+            const img = images[currentIndex];
+            openLightbox(img);
+        }
+
+        // Function to move to previous image
+        function showPrevImage() {
+            currentIndex = (currentIndex - 1 + images.length) % images.length;
+            const img = images[currentIndex];
+            openLightbox(img);
+        }
+
+        // Add next and previous buttons in the carousel (if desired)
+        document.querySelector('.carousel').innerHTML += `
+            <button onclick="showPrevImage()">&#10094;</button>
+            <button onclick="showNextImage()">&#10095;</button>
+        `;
+    </script>
 </body>
 </html>
+
