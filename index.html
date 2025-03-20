@@ -4,111 +4,113 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Maison à Vendre</title>
-    <link rel="stylesheet" href="styles.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
     <style>
         body {
             font-family: 'Inter', sans-serif;
             margin: 0;
             padding: 0;
-            background: url('https://source.unsplash.com/1600x900/?house') no-repeat center center/cover;
+            background: url('images/background.jpg') no-repeat center center/cover;
             color: #333;
             text-align: center;
         }
         header {
             padding: 50px 20px;
-            background: rgba(255, 255, 255, 0.8);
+            background: rgba(255, 255, 255, 0.9);
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 0 0 20px 20px;
         }
         h1 {
             font-weight: 600;
             font-size: 2.5rem;
         }
-        p {
-            font-weight: 300;
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin: 0 auto;
-        }
         nav {
             display: flex;
+            flex-wrap: wrap;
             justify-content: center;
-            gap: 20px;
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.8);
+            gap: 10px;
+            padding: 15px;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+            margin: 20px auto;
+            max-width: 90%;
+        }
+        .nav-row {
+            display: flex;
+            justify-content: center;
+            gap: 10px;
+            width: 100%;
         }
         nav a {
             text-decoration: none;
             color: #007BFF;
             font-weight: 600;
-            padding: 10px;
+            padding: 10px 15px;
+            transition: color 0.3s ease;
+            text-align: center;
+        }
+        nav a:hover {
+            color: #0056b3;
         }
         section {
             padding: 60px 20px;
-            background: rgba(255, 255, 255, 0.9);
-            margin: 20px;
-            border-radius: 10px;
+            background: rgba(255, 255, 255, 0.95);
+            margin: 20px auto;
+            border-radius: 15px;
+            max-width: 900px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
         }
-        #pictures img {
-            width: 80%;
-            max-width: 300px;
-            margin: 10px;
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+        }
+        .gallery img {
+            width: 30%;
+            max-width: 250px;
             border-radius: 10px;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
             cursor: pointer;
+            transition: transform 0.3s ease;
         }
-        .info {
-            background: #fff;
-            padding: 20px;
-            margin: 20px auto;
-            max-width: 600px;
-            border-radius: 10px;
-            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        .gallery img:hover {
+            transform: scale(1.05);
         }
-        footer {
-            padding: 20px;
-            background: rgba(255, 255, 255, 0.8);
-            box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.1);
-            font-size: 0.9rem;
-        }
-        /* Lightbox style */
         .lightbox {
-            display: none;
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
             background: rgba(0, 0, 0, 0.8);
+            display: flex;
             justify-content: center;
             align-items: center;
+            z-index: 1000;
         }
         .lightbox img {
             max-width: 80%;
             max-height: 80%;
             border-radius: 10px;
         }
-        .lightbox .close {
+        .lightbox span {
             position: absolute;
             top: 20px;
-            right: 20px;
+            right: 30px;
             font-size: 2rem;
             color: #fff;
             cursor: pointer;
         }
-        .carousel {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            gap: 20px;
-        }
-        .carousel button {
-            background-color: #007BFF;
-            color: white;
-            font-size: 1.5rem;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
+        footer {
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.9);
+            box-shadow: 0px -4px 10px rgba(0, 0, 0, 0.1);
+            font-size: 0.9rem;
+            margin-top: 20px;
+            border-radius: 20px 20px 0 0;
         }
     </style>
 </head>
@@ -116,87 +118,51 @@
     <header>
         <h1>Maison à Vendre</h1>
     </header>
-    
+
     <nav>
-        <a href="#pictures">Photos</a>
-        <a href="#info">Informations</a>
-        <a href="#contact">Contact</a>
+        <div class="nav-row">
+            <a href="index.html">Accueil</a>
+            <a href="bureau.html">Bureau</a>
+            <a href="chambre_1.html">Chambre 1</a>
+            <a href="chambre_2.html">Chambre 2</a>
+            <a href="chambre_3.html">Chambre 3</a>
+            <a href="chambre_4.html">Chambre 4</a>
+        </div>
+        <div class="nav-row">
+            <a href="cuisine.html">Cuisine</a>
+            <a href="escalier.html">Escalier</a>
+            <a href="exterieur.html">Extérieur</a>
+            <a href="salon.html">Salon</a>
+            <a href="sdb_1.html">Salle de Bain 1</a>
+        </div>
     </nav>
-    
+
     <section id="pictures">
-        <h2>Photos de la Maison</h2>
-        <div id="gallery" class="carousel">
-            <img src="images/house-photo1.jpg" alt="Photo 1" onclick="openLightbox(this)">
-            <img src="images/house-photo2.jpg" alt="Photo 2" onclick="openLightbox(this)">
-            <img src="images/house-photo3.jpg" alt="Photo 3" onclick="openLightbox(this)">
+        <h2>Vue d'Ensemble</h2>
+        <div class="gallery">
+            <img src="images/overview/_DSC2375.jpg" alt="Vue 1" onclick="openLightbox(this)">
+            <img src="images/overview/_DSC2385.jpg" alt="Vue 2" onclick="openLightbox(this)">
+            <img src="images/overview/_DSC2403.jpg" alt="Vue 3" onclick="openLightbox(this)">
+            <img src="images/overview/_DSC2405.jpg" alt="Vue 4" onclick="openLightbox(this)">
+            <img src="images/overview/_DSC2419.jpg" alt="Vue 5" onclick="openLightbox(this)">
+            <img src="images/overview/_DSC2424.jpg" alt="Vue 6" onclick="openLightbox(this)">
+            <img src="images/overview/_DSC2436.jpg" alt="Vue 7" onclick="openLightbox(this)">
+            <img src="images/overview/_DSC2441.jpg" alt="Vue 8" onclick="openLightbox(this)">
+
         </div>
     </section>
-    
-    <section id="info">
-        <h2>Informations sur la Maison</h2>
-        <div class="info">
-            <p><strong>Emplacement:</strong> Votre Adresse</p>
-            <p><strong>Surface:</strong> XXX m²</p>
-            <p><strong>Chambres:</strong> X</p>
-            <p><strong>Salles de bain:</strong> X</p>
-            <p><strong>Détails supplémentaires:</strong> Description de la maison...</p>
-        </div>
-    </section>
-    
-    <section id="contact">
-        <h2>Contact</h2>
-        <p>Email: <a href="mailto:your-email@example.com">your-email@example.com</a></p>
-        <p>Téléphone: <a href="tel:+123456789">+123 456 789</a></p>
-    </section>
-    
+
     <footer>
         <p>&copy; 2024 Maison à Vendre</p>
     </footer>
 
-    <!-- Lightbox Modal -->
-    <div id="lightbox" class="lightbox">
-        <span class="close" onclick="closeLightbox()">&times;</span>
-        <img id="lightbox-img" src="" alt="Lightbox Image">
-    </div>
-
     <script>
-        // Open the lightbox
         function openLightbox(img) {
-            const lightbox = document.getElementById('lightbox');
-            const lightboxImg = document.getElementById('lightbox-img');
-            lightbox.style.display = 'flex';
-            lightboxImg.src = img.src;
+            const lightbox = document.createElement("div");
+            lightbox.classList.add("lightbox");
+            lightbox.innerHTML = `<img src="${img.src}" alt="Agrandissement"><span onclick='this.parentElement.remove()'>&times;</span>`;
+            document.body.appendChild(lightbox);
         }
-
-        // Close the lightbox
-        function closeLightbox() {
-            const lightbox = document.getElementById('lightbox');
-            lightbox.style.display = 'none';
-        }
-
-        // Optional: Carousel Navigation (for next/prev images)
-        let currentIndex = 0;
-        const images = document.querySelectorAll('#gallery img');
-
-        // Function to move to next image
-        function showNextImage() {
-            currentIndex = (currentIndex + 1) % images.length;
-            const img = images[currentIndex];
-            openLightbox(img);
-        }
-
-        // Function to move to previous image
-        function showPrevImage() {
-            currentIndex = (currentIndex - 1 + images.length) % images.length;
-            const img = images[currentIndex];
-            openLightbox(img);
-        }
-
-        // Add next and previous buttons in the carousel (if desired)
-        document.querySelector('.carousel').innerHTML += `
-            <button onclick="showPrevImage()">&#10094;</button>
-            <button onclick="showNextImage()">&#10095;</button>
-        `;
     </script>
 </body>
 </html>

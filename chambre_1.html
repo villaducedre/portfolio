@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chambre 1</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: rgba(240, 240, 240, 1);
+            color: #333;
+            text-align: center;
+        }
+        .gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            padding: 20px;
+        }
+        .gallery img {
+            width: 30%;
+            max-width: 250px;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: transform 0.3s ease;
+        }
+        .gallery img:hover {
+            transform: scale(1.05);
+        }
+        .lightbox {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            z-index: 1000;
+        }
+        .lightbox img {
+            max-width: 80%;
+            max-height: 80%;
+            border-radius: 10px;
+        }
+        .lightbox span {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            font-size: 2rem;
+            color: #fff;
+            cursor: pointer;
+        }
+        .description {
+            max-width: 800px;
+            margin: 20px auto;
+            padding: 20px;
+            background: white;
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Chambre 1</h1>
+    </header>
+
+    <section class="gallery">
+        <img src="images/chambre_1/photo1.jpg" alt="Vue 1" onclick="openLightbox(this)">
+        <img src="images/chambre_1/photo2.jpg" alt="Vue 2" onclick="openLightbox(this)">
+        <img src="images/chambre_1/photo3.jpg" alt="Vue 3" onclick="openLightbox(this)">
+    </section>
+
+    <section class="description">
+        <h2>Description</h2>
+        <p>Cette chambre spacieuse et lumineuse offre un cadre idéal pour se détendre. Dotée d'une grande fenêtre, elle bénéficie d'une belle lumière naturelle tout au long de la journée.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Maison à Vendre</p>
+    </footer>
+
+    <script>
+        function openLightbox(img) {
+            const lightbox = document.createElement("div");
+            lightbox.classList.add("lightbox");
+            lightbox.innerHTML = `<img src="${img.src}" alt="Agrandissement"><span onclick='this.parentElement.remove()'>&times;</span>`;
+            document.body.appendChild(lightbox);
+        }
+    </script>
+</body>
+</html>
