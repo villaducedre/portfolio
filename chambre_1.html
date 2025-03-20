@@ -96,3 +96,32 @@
 
     <section class="description">
         <h2>Description</h2>
+              <p>Cette chambre spacieuse et lumineuse offre un cadre idéal pour se détendre. Dotée d'une grande fenêtre, elle bénéficie d'une belle lumière naturelle tout au long de la journée.</p>
+    </section>
+
+    <footer>
+        <p>&copy; 2024 Villa du Cèdre</p>
+    </footer>
+
+    <script>
+        function openLightbox(img) {
+            const lightbox = document.createElement("div");
+            lightbox.classList.add("lightbox");
+
+            const lightboxImg = document.createElement("img");
+            lightboxImg.src = img.src;
+            lightboxImg.alt = "Agrandissement";
+
+            const closeBtn = document.createElement("span");
+            closeBtn.innerHTML = "&times;";
+            closeBtn.onclick = function() {
+                lightbox.remove();
+            };
+
+            lightbox.appendChild(lightboxImg);
+            lightbox.appendChild(closeBtn);
+            document.body.appendChild(lightbox);
+        }
+    </script>
+</body>
+</html>
