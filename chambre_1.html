@@ -65,36 +65,34 @@
             border-radius: 10px;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
         }
+        header button {
+            margin-top: 10px;
+            padding: 10px 20px;
+            font-size: 1rem;
+            cursor: pointer;
+            border: none;
+            border-radius: 5px;
+            background-color: #007BFF;
+            color: white;
+            transition: background-color 0.3s ease;
+        }
+        header button:hover {
+            background-color: #0056b3;
+        }
     </style>
 </head>
 <body>
     <header>
         <h1>Chambre 1</h1>
+        <button onclick="location.href='index.html'">Retour à l'accueil</button>
     </header>
 
     <section class="gallery">
-        <img src="https://raw.githubusercontent.com/villaducedre/portfolio/refs/heads/main/images/chambre_1/_DSC2437.jpg" alt="Vue 1" onclick="openLightbox(this)">
-        <img src="https://raw.githubusercontent.com/villaducedre/portfolio/refs/heads/main/images/chambre_1/_DSC2439.jpg" alt="Vue 2" onclick="openLightbox(this)">
-        <img src="https://raw.githubusercontent.com/villaducedre/portfolio/refs/heads/main/images/chambre_1/_DSC2443.jpg" alt="Vue 3" onclick="openLightbox(this)">
-        <img src="https://raw.githubusercontent.com/villaducedre/portfolio/refs/heads/main/images/chambre_1/_DSC2447.jpg" alt="Vue 4" onclick="openLightbox(this)">
+        <img src="https://raw.githubusercontent.com/villaducedre/portfolio/refs/heads/main/images/chambre_1/_DSC2437.jpg" alt="Chambre 1 Vue 1" onclick="openLightbox(this)">
+        <img src="https://raw.githubusercontent.com/villaducedre/portfolio/refs/heads/main/images/chambre_1/_DSC2439.jpg" alt="Chambre 1 Vue 2" onclick="openLightbox(this)">
+        <img src="https://raw.githubusercontent.com/villaducedre/portfolio/refs/heads/main/images/chambre_1/_DSC2443.jpg" alt="Chambre 1 Vue 3" onclick="openLightbox(this)">
+        <img src="https://raw.githubusercontent.com/villaducedre/portfolio/refs/heads/main/images/chambre_1/_DSC2447.jpg" alt="Chambre 1 Vue 4" onclick="openLightbox(this)">
     </section>
 
     <section class="description">
         <h2>Description</h2>
-        <p>Cette chambre spacieuse et lumineuse offre un cadre idéal pour se détendre. Dotée d'une grande fenêtre, elle bénéficie d'une belle lumière naturelle tout au long de la journée.</p>
-    </section>
-
-    <footer>
-        <p>&copy; 2024 Villa du Cèdre</p>
-    </footer>
-
-    <script>
-        function openLightbox(img) {
-            const lightbox = document.createElement("div");
-            lightbox.classList.add("lightbox");
-            lightbox.innerHTML = `<img src="${img.src}" alt="Agrandissement"><span onclick='this.parentElement.remove()'>&times;</span>`;
-            document.body.appendChild(lightbox);
-        }
-    </script>
-</body>
-</html>
