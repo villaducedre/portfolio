@@ -43,6 +43,7 @@
             justify-content: center;
             align-items: center;
             z-index: 1000;
+            flex-direction: column;
         }
         .lightbox img {
             max-width: 80%;
@@ -56,6 +57,23 @@
             font-size: 2rem;
             color: #fff;
             cursor: pointer;
+        }
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 2rem;
+            color: #fff;
+            cursor: pointer;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .arrow-left {
+            left: 20px;
+        }
+        .arrow-right {
+            right: 20px;
         }
         .description {
             max-width: 800px;
@@ -88,15 +106,15 @@
     </header>
 
     <section class="gallery">
-        <img src="https://raw.githubusercontent.com/villaducedre/portfolio/refs/heads/main/images/chambre_1/_DSC2437.jpg" alt="Chambre 1 Vue 1" onclick="openLightbox(this)">
-        <img src="https://raw.githubusercontent.com/villaducedre/portfolio/refs/heads/main/images/chambre_1/_DSC2439.jpg" alt="Chambre 1 Vue 2" onclick="openLightbox(this)">
-        <img src="https://raw.githubusercontent.com/villaducedre/portfolio/refs/heads/main/images/chambre_1/_DSC2443.jpg" alt="Chambre 1 Vue 3" onclick="openLightbox(this)">
-        <img src="https://raw.githubusercontent.com/villaducedre/portfolio/refs/heads/main/images/chambre_1/_DSC2447.jpg" alt="Chambre 1 Vue 4" onclick="openLightbox(this)">
+        <img src="https://raw.githubusercontent.com/villaducedre/portfolio/refs/heads/main/images/chambre_1/_DSC2437.jpg" alt="Chambre 1 Vue 1" onclick="openLightbox(0)">
+        <img src="https://raw.githubusercontent.com/villaducedre/portfolio/refs/heads/main/images/chambre_1/_DSC2439.jpg" alt="Chambre 1 Vue 2" onclick="openLightbox(1)">
+        <img src="https://raw.githubusercontent.com/villaducedre/portfolio/refs/heads/main/images/chambre_1/_DSC2443.jpg" alt="Chambre 1 Vue 3" onclick="openLightbox(2)">
+        <img src="https://raw.githubusercontent.com/villaducedre/portfolio/refs/heads/main/images/chambre_1/_DSC2447.jpg" alt="Chambre 1 Vue 4" onclick="openLightbox(3)">
     </section>
 
     <section class="description">
         <h2>Description</h2>
-              <p>Cette chambre spacieuse et lumineuse offre un cadre idéal pour se détendre. Dotée d'une grande fenêtre, elle bénéficie d'une belle lumière naturelle tout au long de la journée.</p>
+        <p>Cette chambre spacieuse et lumineuse offre un cadre idéal pour se détendre. Dotée d'une grande fenêtre, elle bénéficie d'une belle lumière naturelle tout au long de la journée.</p>
     </section>
 
     <footer>
@@ -104,23 +122,46 @@
     </footer>
 
     <script>
-        function openLightbox(img) {
+        const images = [
+            "https://raw.githubusercontent.com/villaducedre/portfolio/refs/heads/main/images/chambre_1/_DSC2437.jpg",
+            "https://raw.githubusercontent.com/villaducedre/portfolio/refs/heads/main/images/chambre_1/_DSC2439.jpg",
+            "https://raw.githubusercontent.com/villaducedre/portfolio/refs/heads/main/images/chambre_1/_DSC2443.jpg",
+            "https://raw.githubusercontent.com/villaducedre/portfolio/refs/heads/main/images/chambre_1/_DSC2447.jpg"
+        ];
+        let currentIndex = 0;
+
+        function openLightbox(index) {
+            currentIndex = index;
             const lightbox = document.createElement("div");
             lightbox.classList.add("lightbox");
 
-            const lightboxImg = document.createElement("img");
-            lightboxImg.src = img.src;
-            lightboxImg.alt = "Agrandissement";
+            const img = document.createElement("img");
+            img.src = images[currentIndex];
 
             const closeBtn = document.createElement("span");
             closeBtn.innerHTML = "&times;";
-            closeBtn.onclick = function() {
-                lightbox.remove();
-            };
+            closeBtn.onclick = function() { lightbox.remove(); };
 
-            lightbox.appendChild(lightboxImg);
+            const leftArrow = document.createElement("span");
+            leftArrow.innerHTML = "&#10094;";
+            leftArrow.classList.add("arrow", "arrow-left");
+            leftArrow.onclick = function() { navigate(-1, img); };
+
+            const rightArrow = document.createElement("span");
+            rightArrow.innerHTML = "&#10095;";
+            rightArrow.classList.add("arrow", "arrow-right");
+            rightArrow.onclick = function() { navigate(1, img); };
+
+            lightbox.appendChild(img);
             lightbox.appendChild(closeBtn);
+            lightbox.appendChild(leftArrow);
+            lightbox.appendChild(rightArrow);
             document.body.appendChild(lightbox);
+        }
+
+        function navigate(direction, img) {
+            currentIndex = (currentIndex + direction + images.length) % images.length;
+            img.src = images[currentIndex];
         }
     </script>
 </body>
