@@ -17,7 +17,7 @@
         }
         header {
             padding: 50px 20px;
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.8);
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
             border-radius: 0 0 20px 20px;
         }
@@ -31,7 +31,7 @@
             justify-content: center;
             gap: 10px;
             padding: 15px;
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.8);
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
             border-radius: 10px;
             margin: 20px auto;
@@ -45,7 +45,7 @@
         }
         nav a {
             text-decoration: none;
-            color: #007BFF;
+            color: #1264bd;
             font-weight: 600;
             padding: 10px 15px;
             transition: color 0.3s ease;
@@ -56,7 +56,7 @@
         }
         section {
             padding: 60px 20px;
-            background: rgba(255, 255, 255, 0.95);
+            background: rgba(255, 255, 255, 0.8);
             margin: 20px auto;
             border-radius: 15px;
             max-width: 900px;
@@ -104,6 +104,31 @@
             color: #fff;
             cursor: pointer;
         }
+        .arrow {
+            position: absolute;
+            top: 50%;
+            transform: translateY(-30%) translateX(-50%);
+            font-size: 50rem;
+            color: #fff;
+            cursor: pointer;
+            background: rgba(0, 0, 0, 0.5);
+            padding: 10px;
+            border-radius: 5px;
+        }
+        .arrow-left {
+            left: 20px;
+        }
+        .arrow-right {
+            right: 20px;
+        }
+        .description {
+            max-width: 900px;
+            margin: 20px auto;
+            padding: 20px;
+            background: rgba(255, 255, 255, 0.8);
+            border-radius: 10px;
+            box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+        }
         footer {
             padding: 20px;
             background: rgba(255, 255, 255, 0.9);
@@ -121,47 +146,99 @@
 
     <nav>
         <div class="nav-row">
-            <a href="index.html">Accueil</a>
-            <a href="bureau.html">Bureau</a>
+            <a href="exterieur.html">Extérieur</a>
+            <a href="salon.html">Salon</a>
+            <a href="cuisine.html">Cuisine</a>
             <a href="chambre_1.html">Chambre 1</a>
             <a href="chambre_2.html">Chambre 2</a>
             <a href="chambre_3.html">Chambre 3</a>
             <a href="chambre_4.html">Chambre 4</a>
         </div>
         <div class="nav-row">
-            <a href="cuisine.html">Cuisine</a>
+            <a href="bureau.html">Bureau</a>
             <a href="escalier.html">Escalier</a>
-            <a href="exterieur.html">Extérieur</a>
-            <a href="salon.html">Salon</a>
             <a href="sdb_1.html">Salle de Bain 1</a>
+            <a href="sdb_2.html">Salle de Bain 2</a>
+            <a href="sdb_3.html">Salle de Bain 3</a>
         </div>
     </nav>
-
+    <section class="description">
+        <h2>Description</h2>
+        TODO
+    </section>
     <section id="pictures">
         <h2>Vue d'Ensemble</h2>
         <div class="gallery">
-            <img src="https://raw.githubusercontent.com/villaducedre/portfolio/refs/heads/main/images/overview/_DSC2375.jpg" alt="Overview Vue 1" onclick="openLightbox(this)">
-            <img src="https://raw.githubusercontent.com/villaducedre/portfolio/refs/heads/main/images/overview/_DSC2385.jpg" alt="Overview Vue 2" onclick="openLightbox(this)">
-            <img src="https://raw.githubusercontent.com/villaducedre/portfolio/refs/heads/main/images/overview/_DSC2403.jpg" alt="Overview Vue 3" onclick="openLightbox(this)">
-            <img src="https://raw.githubusercontent.com/villaducedre/portfolio/refs/heads/main/images/overview/_DSC2405.jpg" alt="Overview Vue 4" onclick="openLightbox(this)">
-            <img src="https://raw.githubusercontent.com/villaducedre/portfolio/refs/heads/main/images/overview/_DSC2419.jpg" alt="Overview Vue 5" onclick="openLightbox(this)">
-            <img src="https://raw.githubusercontent.com/villaducedre/portfolio/refs/heads/main/images/overview/_DSC2424.jpg" alt="Overview Vue 6" onclick="openLightbox(this)">
-            <img src="https://raw.githubusercontent.com/villaducedre/portfolio/refs/heads/main/images/overview/_DSC2436.jpg" alt="Overview Vue 7" onclick="openLightbox(this)">
-            <img src="https://raw.githubusercontent.com/villaducedre/portfolio/refs/heads/main/images/overview/_DSC2441.jpg" alt=" Overview Vue 8" onclick="openLightbox(this)">
+            <img src="https://raw.githubusercontent.com/villaducedre/portfolio/refs/heads/main/images/overview/_DSC2375.jpg" alt="Overview Vue 1" onclick="openLightbox(0)">
+            <img src="https://raw.githubusercontent.com/villaducedre/portfolio/refs/heads/main/images/overview/_DSC2385.jpg" alt="Overview Vue 2" onclick="openLightbox(1)">
+            <img src="https://raw.githubusercontent.com/villaducedre/portfolio/refs/heads/main/images/overview/_DSC2403.jpg" alt="Overview Vue 3" onclick="openLightbox(2)">
+            <img src="https://raw.githubusercontent.com/villaducedre/portfolio/refs/heads/main/images/overview/_DSC2405.jpg" alt="Overview Vue 4" onclick="openLightbox(3)">
+            <img src="https://raw.githubusercontent.com/villaducedre/portfolio/refs/heads/main/images/overview/_DSC2419.jpg" alt="Overview Vue 5" onclick="openLightbox(4)">
+            <img src="https://raw.githubusercontent.com/villaducedre/portfolio/refs/heads/main/images/overview/_DSC2424.jpg" alt="Overview Vue 6" onclick="openLightbox(5)">
+            <img src="https://raw.githubusercontent.com/villaducedre/portfolio/refs/heads/main/images/overview/_DSC2436.jpg" alt="Overview Vue 7" onclick="openLightbox(6)">
+            <img src="https://raw.githubusercontent.com/villaducedre/portfolio/refs/heads/main/images/overview/_DSC2441.jpg" alt=" Overview Vue 8" onclick="openLightbox(7)">
 
         </div>
     </section>
+    <section class="description">
+        <h2>Informations</h2>
 
+        TODO
+    </section>
+    <section class="description">
+        <h2>Contact</h2>
+
+        TODO
+    </section>
     <footer>
         <p>&copy; 2024 Villa du Cèdre</p>
     </footer>
 
     <script>
-        function openLightbox(img) {
+        const images = [
+            "https://raw.githubusercontent.com/villaducedre/portfolio/refs/heads/main/images/overview/_DSC2375.jpg",
+            "https://raw.githubusercontent.com/villaducedre/portfolio/refs/heads/main/images/overview/_DSC2385.jpg",
+            "https://raw.githubusercontent.com/villaducedre/portfolio/refs/heads/main/images/overview/_DSC2403.jpg",
+            "https://raw.githubusercontent.com/villaducedre/portfolio/refs/heads/main/images/overview/_DSC2405.jpg",
+            "https://raw.githubusercontent.com/villaducedre/portfolio/refs/heads/main/images/overview/_DSC2419.jpg",
+            "https://raw.githubusercontent.com/villaducedre/portfolio/refs/heads/main/images/overview/_DSC2424.jpg",
+            "https://raw.githubusercontent.com/villaducedre/portfolio/refs/heads/main/images/overview/_DSC2436.jpg",
+            "https://raw.githubusercontent.com/villaducedre/portfolio/refs/heads/main/images/overview/_DSC2441.jpg",
+        ];
+        let currentIndex = 0;
+
+        function openLightbox(index) {
+            currentIndex = index;
             const lightbox = document.createElement("div");
             lightbox.classList.add("lightbox");
-            lightbox.innerHTML = `<img src="${img.src}" alt="Agrandissement"><span onclick='this.parentElement.remove()'>&times;</span>`;
+
+            const img = document.createElement("img");
+            img.src = images[currentIndex];
+
+            const closeBtn = document.createElement("span");
+            closeBtn.innerHTML = "&times;";
+            closeBtn.onclick = function() { lightbox.remove(); };
+
+            const leftArrow = document.createElement("span");
+            leftArrow.innerHTML = "&#10094;";
+            leftArrow.classList.add("arrow", "arrow-left");
+            leftArrow.onclick = function() { navigate(-1, img); };
+
+            const rightArrow = document.createElement("span");
+            rightArrow.innerHTML = "&#10095;";
+            rightArrow.classList.add("arrow", "arrow-right");
+            rightArrow.onclick = function() { navigate(1, img); };
+
+            lightbox.appendChild(img);
+            lightbox.appendChild(leftArrow);
+            lightbox.appendChild(rightArrow);
+            lightbox.appendChild(closeBtn);
             document.body.appendChild(lightbox);
+        }
+
+        function navigate(direction, img) {
+            currentIndex = (currentIndex + direction + images.length) % images.length;
+            img.src = images[currentIndex];
         }
     </script>
 </body>
