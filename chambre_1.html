@@ -61,8 +61,8 @@
         .arrow {
             position: absolute;
             top: 50%;
-            transform: translateY(-50%);
-            font-size: 2rem;
+            transform: translateY(-30%) translateX(-50%);
+            font-size: 50rem;
             color: #fff;
             cursor: pointer;
             background: rgba(0, 0, 0, 0.5);
@@ -83,14 +83,19 @@
             border-radius: 10px;
             box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
         }
+        header {
+            position: relative;
+        }
         header button {
-            margin-top: 10px;
-            padding: 10px 20px;
-            font-size: 1rem;
+            position: absolute;
+            top: 10px;
+            left: 10px;
+            padding: 8px 16px;
+            font-size: 1.2rem;
             cursor: pointer;
             border: none;
             border-radius: 5px;
-            background-color: #007BFF;
+            background-color: #1264bd;
             color: white;
             transition: background-color 0.3s ease;
         }
@@ -102,14 +107,13 @@
 <body>
     <header>
         <h1>Chambre 1</h1>
-        <button onclick="location.href='index.html'">Retour à l'accueil</button>
+        <button onclick="location.href='index.html'">Accueil</button>
     </header>
 
     <section class="gallery">
-        <img src="https://raw.githubusercontent.com/villaducedre/portfolio/refs/heads/main/images/chambre_1/_DSC2437.jpg" alt="Chambre 1 Vue 1" onclick="openLightbox(0)">
-        <img src="https://raw.githubusercontent.com/villaducedre/portfolio/refs/heads/main/images/chambre_1/_DSC2439.jpg" alt="Chambre 1 Vue 2" onclick="openLightbox(1)">
-        <img src="https://raw.githubusercontent.com/villaducedre/portfolio/refs/heads/main/images/chambre_1/_DSC2443.jpg" alt="Chambre 1 Vue 3" onclick="openLightbox(2)">
-        <img src="https://raw.githubusercontent.com/villaducedre/portfolio/refs/heads/main/images/chambre_1/_DSC2447.jpg" alt="Chambre 1 Vue 4" onclick="openLightbox(3)">
+        <img src="https://raw.githubusercontent.com/villaducedre/portfolio/refs/heads/main/images/chambre_1/_DSC2441.jpg" alt="Chambre 1 Vue 1" onclick="openLightbox(0)">
+        <img src="https://raw.githubusercontent.com/villaducedre/portfolio/refs/heads/main/images/chambre_1/_DSC2443.jpg" alt="Chambre 1 Vue 3" onclick="openLightbox(1)">
+        <img src="https://raw.githubusercontent.com/villaducedre/portfolio/refs/heads/main/images/chambre_1/_DSC2447.jpg" alt="Chambre 1 Vue 4" onclick="openLightbox(2)">
     </section>
 
     <section class="description">
@@ -117,8 +121,16 @@
         <p>Cette chambre spacieuse et lumineuse offre un cadre idéal pour se détendre. Dotée d'une grande fenêtre, elle bénéficie d'une belle lumière naturelle tout au long de la journée.</p>
     </section>
 
+    <section class="description">
+        <h2>Charactéristiques</h2>
+        <p><b>Surface</b>: 20m²</p>
+        <p><b>Étage</b>: 1er</p>
+        <p><b>Ouvertures</b>: 2</p>
+
+    </section>
+
     <footer>
-        <p>&copy; 2024 Villa du Cèdre</p>
+        <p>&copy; 2025 Villa du Cèdre</p>
     </footer>
 
     <script>
@@ -153,9 +165,9 @@
             rightArrow.onclick = function() { navigate(1, img); };
 
             lightbox.appendChild(img);
-            lightbox.appendChild(closeBtn);
             lightbox.appendChild(leftArrow);
             lightbox.appendChild(rightArrow);
+            lightbox.appendChild(closeBtn);
             document.body.appendChild(lightbox);
         }
 
